@@ -1,34 +1,86 @@
 ---
-import Card from "./Card.astro"
+import Card from "./Card.astro";
+import Alarmas from "../icons/Alarmas.astro";
+import Camaras from "../icons/Camaras.astro";
+import Video from "../icons/Video.astro";
+import Internet from "../icons/Internet.astro";
+import Link from "../components/Link.astro";
 ---
 
 <section id="servicios">
-  <div class="container mx-auto p-2">
+  <div class="container max-w-5xl mx-auto px-2 py-10">
     <Card>
-      <h1 class="text-center">Servicios</h1>
-      <div class="grid grid-cols-1 md:grid-cols-2">
-        <!-- animación con delay -->
-        <ul>
-          <li>
-            <!-- icono -->
-            Alarmas inteligentes
-          </li>
-          <li>
-            <!-- icono -->
-            Cámaras de video vigilancia
-          </li>
-          <li>
-            <!-- icono -->
-            Video porteros
-          </li>
-          <li>
-            <!-- icono -->
-            Internet
-          </li>
-        </ul>
-        <div>
-          <!-- imagen -->
-        </div> 
+      <h1 class="text-center text-[#002147] font-bold text-2xl md:text-3xl mb-4">Servicios</h1>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-7 max-w-4xl mx-auto">
+        <div class="rounded-xl border border-gray-200 flex flex-col items-center relative w-full h-full transform transition-transform duration-500 ">
+          <div class="bg-gray-200 rounded-xl px-2 pt-9 pb-25 w-full h-full flex flex-col items-center justify-start">
+            <Camaras height="40" width="40" class="mb-2" />
+            <h2 class="text-lg font-semibold mb-2">Cámaras de Seguridad</h2>
+            <p class="text-sm text-gray-600 text-center">Instalación y mantenimiento de cámaras de vigilancia</p>
+            <ul class="mt-4 text-center">
+              <li class="font-semibold  text-sm text-gray-600 mb-1">Asesoría e instalación de sistemas de videovigilancia</li>
+              <li class="font-semibold  text-sm text-gray-600 mb-1">Configuración de cámaras IP</li>
+              <li class="font-semibold  text-sm text-gray-600 mb-1">Monitoreo en tiempo real y grabación</li>
+              <li class="font-semibold  text-sm text-gray-600 mb-1">Mantenimiento preventivo y correctivo de equipos</li>
+              <li class="font-semibold  text-sm text-gray-600 ">Soporte técnico continuo</li>
+            </ul>
+            <div class="absolute bottom-10 left-0 right-0 text-center">
+              <Link href="#">Más información</Link> 
+            </div>
+          </div>
+        </div>
+        <div class="rounded-xl border border-gray-200 flex flex-col items-center relative w-full h-full transform transition-transform duration-500 ">
+          <div class="rounded-xl bg-gray-200 px-2 pt-9 pb-25 w-full h-full flex flex-col items-center justify-start">
+            <Alarmas height="40" width="40" class="mb-2" />
+            <h2 class="text-lg font-semibold mb-2">Alarmas inteligentes</h2>
+            <p class="text-sm text-gray-600 text-center">Instalación profesional de alarmas inteligentes</p>
+            <ul class="mt-4 text-center">
+              <li class="font-semibold  text-sm text-gray-600 mb-1">Asesoría personalizada</li>
+              <li class="font-semibold  text-sm text-gray-600 mb-1">Instalación profesional</li>
+              <li class="font-semibold  text-sm text-gray-600 mb-1">Configuración completa</li>
+              <li class="font-semibold  text-sm text-gray-600 mb-1">Capacitación al cliente</li>
+              <li class="font-semibold  text-sm text-gray-600 ">Actualización de sistemas antiguos</li>
+            </ul>
+            <div class="absolute bottom-10 left-0 right-0 text-center">
+              <Link href="#">Más información</Link> 
+            </div>
+          </div>
+        </div>
+        <div class="rounded-xl border border-gray-200 flex flex-col items-center relative w-full h-full transform transition-transform duration-500">
+          <div class="rounded-xl bg-gray-200 px-2 pt-9 pb-25 w-full h-full flex flex-col items-center justify-start">
+            <Video height="40" width="40" class="mb-2" />
+            <h2 class="text-lg font-semibold mb-2">Video porteros</h2>
+            <p class="text-sm text-gray-600 text-center">Mejora tu seguridad, controla el acceso y nunca más pierdas una visita, estés donde estés</p>
+            <ul class="my-4 text-center">
+              <li class="font-semibold  text-sm text-gray-600 mb-1">Asesoría personalizada</li>
+              <li class="font-semibold  text-sm text-gray-600 mb-1">Montaje y cambleado limpio</li>
+              <li class="font-semibold  text-sm text-gray-600 ">Soporte y mantenimiento</li>
+            </ul>
+            <div class="absolute bottom-10 left-0 right-0 text-center">
+              <Link href="#">Más información</Link> 
+            </div>
+          </div>
+        </div>
+        <div class="rounded-xl border border-gray-200 flex flex-col items-center relative w-full h-full transform transition-transform duration-500">
+          <div class="rounded-xl bg-gray-200 px-2 pt-9 pb-25 w-full h-full flex flex-col items-center justify-start">
+            <Internet height="40" width="40" class="mb-2" />
+            <h2 class="text-lg font-semibold mb-2">Internet</h2>
+            <p class="text-sm text-gray-600 text-center">Ofrecemos instalación profesional de redes e internet para hogares, oficinas o comercios</p>
+            <ul class="my-4 text-center">
+              <li class="font-semibold text-sm text-gray-600 mb-1">Asesoría e instalación de sistemas de videovigilancia</li>
+              <li class="font-semibold text-sm text-gray-600 mb-1">Configuración de cámaras IP</li>
+              <li class="font-semibold  text-sm text-gray-600 mb-1">Monitoreo en tiempo real y grabación</li>
+              <li class="font-semibold  text-sm text-gray-600 mb-1">Mantenimiento preventivo y correctivo de equipos</li>
+              <li class="font-semibold  text-sm text-gray-600 ">Soporte técnico continuo</li>
+            </ul>
+            <div class="absolute bottom-10 left-0 right-0 text-center">
+              <Link href="#">Más información</Link> 
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-8">
+        <p class="font-medium text-[#002147]">Pregunta por nuestros paquetes personalizados</p>
       </div>
     </Card>
   </div>

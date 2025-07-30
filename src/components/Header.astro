@@ -1,20 +1,113 @@
 ---
-
+import Whatsapp from '../components/Whatsapp.astro';
 ---
 
 
-<header class="bg-[linear-gradient(90deg,#002147,#004aad)] text-white py-4 px-2 text-center sticky top-0 z-[1000]">
-  <div class="flex items-center justify-center gap-2">
-    <img src="/logo.png" alt="Logo" class="bg-white w-30 p-2 rounded shadow-lg" />
-    <h1>TECNOSC</h1>
+<header class="bg-[linear-gradient(90deg,#002147,#004aad)] text-white py-4 text-center sticky top-0 z-[1000] transition-all duration-300">
+  <div class="hidden md:flex items-center justify-center gap-2 pb-4">
+    <img src="/logo.png" alt="Logo" class="w-35 transition-all duration-300" style="filter: drop-shadow(1px 1px 8px white)" />
   </div>
   <nav class="bg-[#002147] py-1">
-    <ul class="flex justify-around list-none m-0 py-2 text-md">
-      <li><a href="index.html" class="text-white no-underline px-6 py-2 transition-colors duration-300 rounded-[10px] hover:bg-[#ffb400] hover:text-[#002147] focus:outline-none focus:ring-2 focus:ring-white">Inicio</a></li>
-      <li><a href="quienes-somos.html" class="text-white no-underline px-6 py-2 transition-colors duration-300 rounded-[10px] hover:bg-[#ffb400] hover:text-[#002147] focus:outline-none focus:ring-2 focus:ring-white">Quiénes somos</a></li>
-      <li><a href="mision.html" class="text-white no-underline px-6 py-2 transition-colors duration-300 rounded-[10px] hover:bg-[#ffb400] hover:text-[#002147] focus:outline-none focus:ring-2 focus:ring-white">Misión</a></li>
-      <li><a href="vision.html" class="text-white no-underline px-6 py-2 transition-colors duration-300 rounded-[10px] hover:bg-[#ffb400] hover:text-[#002147] focus:outline-none focus:ring-2 focus:ring-white">Visión</a></li>
-      <li><a href="contacto.html" class="text-white no-underline px-6 py-2 transition-colors duration-300 rounded-[10px] hover:bg-[#ffb400] hover:text-[#002147] focus:outline-none focus:ring-2 focus:ring-white">Contacto</a></li>
+    <ul class="flex justify-between list-none m-0 text-md items-center container max-w-7xl mx-auto px-2">
+      <li class="md:hidden">
+        <a href="#">
+          <img src="/logo.png" alt="Logo" class="w-25 p-2 rounded" style="filter: drop-shadow(0px 0px 4px white)"/>
+        </a>
+      </li>
+      <li><a data-active="banner" href="#banner" class="hidden md:block font-semibold text-white no-underline px-6 py-2 transition-colors duration-300 rounded-[10px] hover:bg-[#ffb400] hover:text-[#002147] focus:outline-none focus:ring-2 focus:ring-white">Inicio</a></li>
+      <li><a href="#quienes-somos" data-active="quienes-somos" class="hidden md:block font-semibold text-white no-underline px-6 py-2 transition-colors duration-300 rounded-[10px] hover:bg-[#ffb400] hover:text-[#002147] focus:outline-none focus:ring-2 focus:ring-white">Quiénes somos</a></li>
+      <li><a href="#servicios" data-active="servicios" class="hidden md:block font-semibold text-white no-underline px-6 py-2 transition-colors duration-300 rounded-[10px] hover:bg-[#ffb400] hover:text-[#002147] focus:outline-none focus:ring-2 focus:ring-white">Servicios</a></li>
+      <li><a href="#galeria" data-active="galeria" class="hidden md:block font-semibold text-white no-underline px-6 py-2 transition-colors duration-300 rounded-[10px] hover:bg-[#ffb400] hover:text-[#002147] focus:outline-none focus:ring-2 focus:ring-white">Galería</a></li>
+      <li><a href="#contacto" data-active="contacto" class="hidden md:block font-semibold text-white no-underline px-6 py-2 transition-colors duration-300 rounded-[10px] hover:bg-[#ffb400] hover:text-[#002147] focus:outline-none focus:ring-2 focus:ring-white">Contacto</a></li>
+      <li class="md:hidden"><span id="open-collapsing-menu" class="text-white no-underline px-4 text-3xl transition-colors duration-300 rounded-[10px] hover:bg-[#ffb400] hover:text-[#002147] focus:outline-none focus:ring-2 focus:ring-white">&#9776;</span></li>
     </ul>
   </nav>
+  <div id="collapsing-menu" class="hidden md:hidden h-full w-full bg-[#004aad] fixed z-9999 top-0 left-0 ">
+    <div class="max-w-md mx-auto p-4 h-full flex flex-col items-center justify-start gap-15">
+      <span id="close" class="absolute top-13 right-8 font-bold">&#10005;</span>
+      <img src="/white-logo.png" alt="" class="w-35 mt-7" style="filter: drop-shadow(0px 0px 4px #002147)">
+      <nav>
+        <ul class="flex flex-col gap-4 justify-between list-none m-0 text-md items-center container max-w-7xl mx-auto">
+          <li><a href="#" class="text-xl font-semibold text-white no-underline transition-colors duration-300 rounded-[10px] hover:bg-[#ffb400] hover:text-[#002147] focus:outline-none focus:ring-2 focus:ring-white">Inicio</a></li>
+          <li><a href="#quienes-somos" class="text-xl font-semibold text-white no-underline transition-colors duration-300 rounded-[10px] hover:bg-[#ffb400] hover:text-[#002147] focus:outline-none focus:ring-2 focus:ring-white">Quiénes somos</a></li>
+          <li><a href="#servicios" class="text-xl font-semibold text-white no-underline transition-colors duration-300 rounded-[10px] hover:bg-[#ffb400] hover:text-[#002147] focus:outline-none focus:ring-2 focus:ring-white">Servicios</a></li>
+          <li><a href="#galeria" class="text-xl font-semibold text-white no-underline transition-colors duration-300 rounded-[10px] hover:bg-[#ffb400] hover:text-[#002147] focus:outline-none focus:ring-2 focus:ring-white">Galería</a></li>
+          <li><a href="#contacto" class="text-xl font-semibold text-white no-underline transition-colors duration-300 rounded-[10px] hover:bg-[#ffb400] hover:text-[#002147] focus:outline-none focus:ring-2 focus:ring-white">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
 </header>
+
+
+
+<Whatsapp />
+
+<style>
+@media (min-width: 768px) {
+  header.scrolled img {
+    width: 90px;
+  }
+}
+header nav .active {
+  text-decoration: underline;
+  text-underline-offset: 5px;
+  text-decoration-color: #ffb400;
+  text-decoration-thickness: 3px;
+  transition: all 0.3s ease-in-out;
+}
+</style>
+
+<script>
+document.addEventListener('scroll', () => {
+  const header = document.querySelector('header');
+  if (window.scrollY > 100) {
+    header?.classList.add('scrolled');
+  } else {
+    header?.classList.remove('scrolled');
+  }
+})
+
+document.querySelector('#open-collapsing-menu')?.addEventListener('click', () => {
+  if (document.querySelector('#collapsing-menu')?.classList.contains('hidden')) {
+    document.querySelector('#collapsing-menu')?.classList.remove('hidden')
+  } else {
+    document.querySelector('#collapsing-menu')?.classList.add('hidden')
+  }
+})
+
+document.querySelector('#close')?.addEventListener('click', () => {
+  if (document.querySelector('#collapsing-menu')?.classList.contains('hidden')) {
+    document.querySelector('#collapsing-menu')?.classList.remove('hidden')
+  } else {
+    document.querySelector('#collapsing-menu')?.classList.add('hidden')
+  }
+})
+
+
+
+// sección active
+const sections = document.querySelectorAll("section");
+
+const observerActiveSection = new IntersectionObserver(
+  entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const activeLink = document.querySelector(`a[data-active="${entry.target.id}"]`);
+        if (activeLink) {
+          document.querySelectorAll('a[data-active]').forEach(link => link.classList.remove('active'));
+          activeLink.classList.add('active');
+        }
+      }
+    });
+  },
+  {
+    root: null,
+    rootMargin: "0px 0px -50% 0px",
+    threshold: 0
+  }
+);
+sections.forEach(section => observerActiveSection.observe(section));
+
+
+</script>

@@ -1,3 +1,9 @@
+# Form handler for formspree.> [!IMPORTANT]
+Free formspree.io accounts are limited to 50 submissions per month. If you need more, you can [upgrade to a paid plan](https://formspree.io/pricing) or use a different form handler. 
+
+
+
+
 # Astro Starter Kit: Basics
 
 ```sh
