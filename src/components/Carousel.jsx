@@ -14,13 +14,23 @@ export default () => {
       // install Swiper modules
       modules={[Navigation, Pagination, A11y, Autoplay]}
       spaceBetween={15}
-      slidesPerView={3}
+      slidesPerView={1}
       navigation
       loop={true}
-      autoplay={{ delay: 2000, disableOnInteraction: true}}
+      // autoplay={{ delay: 2000, disableOnInteraction: true}}
       pagination={{ clickable: true }}
       // onSwiper={(swiper) => console.log(swiper)}
       // onSlideChange={() => console.log('slide change')}
+      breakpoints={{
+        767: {
+          slidesPerView: 3,
+          spaceBetween: 10,
+        },
+        600: {
+          slidesPerView: 2,
+          spaceBetween: 10,
+        }
+      }}
     >
       {images.map((image, index) => {
         return (

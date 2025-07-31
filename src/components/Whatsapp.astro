@@ -1,3 +1,9 @@
-<a href="#">
+---
+const numero = '3418785518';
+const mensaje = 'Hola, quiero más información sobre las soluciones de seguridad :)';
+const mensajeCodificado = encodeURIComponent(mensaje);
+const linkWhatsapp = `https://wa.me/52${numero}?text=${mensajeCodificado}`;
+---
+<a href={linkWhatsapp} target="_blank">
   <img src="/whatsapp-icon.svg" alt="WhatsApp" class="fixed bottom-7 right-7 w-15 h-15 rounded-full shadow-lg transition-transform duration-300 hover:scale-110 z-999" />
 </a>

@@ -73,9 +73,6 @@ import "../styles/global.css";
   font-style: normal;
   font-display: swap;
 }
-[id] {
-  scoll-margin-top: 100px
-}
 
   html {
     scroll-behavior: smooth;
@@ -91,7 +88,42 @@ strong {
 }
 
   [id] {
-    scroll-margin-top: 200px;
+    scroll-margin-top: 100px;
   }
+
+  @media (max-width: 767px) {
+  [id] {
+    scroll-margin-top: 50px;
+  }
+  }
+
+.swiper {
+  padding: 0 10px 50px;
+  user-select: none;
+}
+
+.swiper-button-next, .swiper-button-prev {
+  background-color: #004aad;
+  border-radius: 50%;
+  box-shadow: 0 4px 2px rgba(0, 0, 0, 0.1);
+  top: calc(50% - 18px);
+  height: 40px;
+  width: 40px;
+}
+
+.swiper-button-next::after, .swiper-button-prev::after {
+  font-size: 15px;
+  color: white;
+  font-weight: bold;
+}
+
+
+.swiper-button-next {
+  right: 0;
+}
+
+.swiper-button-prev {
+  left: 0
+}
 
 </style>
