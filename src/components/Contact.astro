@@ -10,15 +10,15 @@ import Button from './Button.astro';
       <!-- formulario de contacto -->
       <form id="contact-form" class="relative">
         <label for="name" class="relative text-white">Nombre:
-          <input name="name" type="text" value="" id="name" class="font-medium block p-2 border border-gray-300 rounded-lg w-full mb-10">
+          <input name="name" type="text" value="" id="name" class="bg-white text-gray-700 font-medium block p-2 border border-gray-300 rounded-lg w-full mb-10">
           <p class="error text-xs md:text-md text-red-400 hidden absolute bottom-10 w-max break-words font-medium">Ingrese un nombre válido (solo letras y espacios)</p>
         </label>
         <label for="email" class="relative text-white">Email:
-          <input name="email" type="email" value="" id="email" class="font-medium block p-2 border border-gray-300 rounded-lg w-full mb-10">
+          <input name="email" type="email" value="" id="email" class="bg-white text-gray-700 font-medium block p-2 border border-gray-300 rounded-lg w-full mb-10">
           <p class="error text-xs md:text-md text-red-400 hidden absolute bottom-10 w-max font-medium break-words">Ingrese un email válido (ejemplo@gmail.com)</p>
         </label>
         <label for="message" class="text-white">Mensaje:
-          <textarea name="message" id="message" rows="10" class="font-medium block p-2 border border-gray-300 rounded-lg w-full mb-10"></textarea>
+          <textarea name="message" id="message" rows="10" class="bg-white text-gray-700 font-medium block p-2 border border-gray-300 rounded-lg w-full mb-10"></textarea>
         </label>
         <Button customClass="w-full">Enviar</Button>
       </form>
