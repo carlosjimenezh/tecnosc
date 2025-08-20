@@ -1,9 +1,10 @@
 ---
 const href = Astro.props.href || "#";
 const target = Astro.props.target || "";
+const className = Astro.props.className || "";
 ---
 
-<a href={href} target={target} class="inline-block font-bold shadow-lg rounded-xl transition duration-300 ease-in-out bg-[#ffb400] text-white hover:bg-[#e0a000] hover:text-white px-4 py-2">
+<a href={href} target={target} class=`inline-block font-semibold shadow rounded transition duration-300 ease-in-out border border-2 px-4 py-2 ${className}`>
   <slot />
 </a>
 

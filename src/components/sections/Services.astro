@@ -1,0 +1,71 @@
+---
+import Alarmas from "../../icons/Alarmas.astro";
+import Camaras from "../../icons/Camaras.astro";
+import Video from "../../icons/Video.astro";
+import Internet from "../../icons/Internet.astro";
+import Link from "../../components/Link.astro";
+const numero = '3418785518';
+const mensajeCamaras = 'Hola, quiero más información sobre las camaras de seguridad :)';
+const mensajeAlarmas = 'Hola, quiero más información sobre las alarmas de seguridad :)';
+const mensajeVideo = 'Hola, quiero más información sobre los video porteros :)';
+const mensajeInternet = 'Hola, quiero más información sobre las soluciones de Internet :)';
+const mensajeCodificadoCamaras = encodeURIComponent(mensajeCamaras);
+const mensajeCodificadoAlarmas = encodeURIComponent(mensajeAlarmas);
+const mensajeCodificadoVideo = encodeURIComponent(mensajeVideo);
+const mensajeCodificadoInternet = encodeURIComponent(mensajeInternet);
+const linkWhatsappCamaras = `https://wa.me/52${numero}?text=${mensajeCodificadoCamaras}`;
+const linkWhatsappAlarmas = `https://wa.me/52${numero}?text=${mensajeCodificadoAlarmas}`;
+const linkWhatsappVideo = `https://wa.me/52${numero}?text=${mensajeCodificadoVideo}`;
+const linkWhatsappInternet = `https://wa.me/52${numero}?text=${mensajeCodificadoInternet}`;
+---
+
+<section id="servicios">
+  <div class="container max-w-5xl mx-auto px-2 py-10">
+    <!-- <h1 class="text-center text-[#002147] font-bold text-2xl md:text-3xl mb-4">Servicios</h1> -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-2 max-w-4xl mx-auto">
+      <div class="rounded flex flex-col items-center relative w-full h-full transform transition-transform duration-500 ">
+        <div class="bg-gray-100 rounded px-4 pt-9 pb-28 w-full h-full flex flex-col items-center justify-start">
+          <Camaras height="40" width="40" class="mb-2" />
+          <h2 class="text-lg font-semibold mb-4">Cámaras de Seguridad</h2>
+          <p class="text-sm text-gray-500 text-center max-w-[250px]">Instalación y mantenimiento de cámaras de vigilancia</p>
+          <div class="absolute bottom-10 left-0 right-0 text-center">
+            <Link className="text-gray-500 hover:text-gray-700" href={linkWhatsappCamaras} target="_blank">Más información</Link> 
+          </div>
+        </div>
+      </div>
+      <div class="rounded flex flex-col items-center relative w-full h-full transform transition-transform duration-500 ">
+        <div class="rounded bg-gray-100 px-4 pt-9 pb-28 w-full h-full flex flex-col items-center justify-start">
+          <Alarmas height="40" width="40" class="mb-4" />
+          <h2 class="text-lg font-semibold mb-2">Alarmas inteligentes</h2>
+          <p class="text-sm text-gray-500 text-center max-w-[250px]">Instalación profesional de alarmas inteligentes</p>
+          <div class="absolute bottom-10 left-0 right-0 text-center">
+            <Link className="text-gray-500 hover:text-gray-700" href={linkWhatsappAlarmas} target="_blank">Más información</Link> 
+          </div>
+        </div>
+      </div>
+      <div class="rounded flex flex-col items-center relative w-full h-full transform transition-transform duration-500">
+        <div class="rounded bg-gray-100 px-4 pt-9 pb-28 w-full h-full flex flex-col items-center justify-start">
+          <Video height="40" width="40" class="mb-4" />
+          <h2 class="text-lg font-semibold mb-2">Video porteros</h2>
+          <p class="text-sm text-gray-500 text-center max-w-[250px]">Mejora tu seguridad y controla el acceso</p>
+          <div class="absolute bottom-10 left-0 right-0 text-center">
+            <Link className="text-gray-500 hover:text-gray-700" href={linkWhatsappVideo} target="_blank">Más información</Link> 
+          </div>
+        </div>
+      </div>
+      <div class="rounded flex flex-col items-center relative w-full h-full transform transition-transform duration-500">
+        <div class="rounded bg-gray-100 px-4 pt-9 pb-28 w-full h-full flex flex-col items-center justify-start">
+          <Internet height="40" width="40" class="mb-4" />
+          <h2 class="text-lg font-semibold mb-2">Internet</h2>
+          <p class="text-sm text-gray-500 text-center max-w-[250px]">Instalación profesional para hogares, oficinas o comercios</p>
+          <div class="absolute bottom-10 left-0 right-0 text-center">
+            <Link className="text-gray-500 hover:text-gray-700" href={linkWhatsappInternet} target="_blank">Más información</Link> 
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="text-center mt-5">
+      <strong>¡Cotiza hoy mismo y recibe la mejor solución para tu hogar o negocio!</strong>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,40 @@
+---
+import Facebook from "../../icons/Facebook.astro"
+import Instagram from "../../icons/Instagram.astro"
+import Phone from "../../icons/Phone.astro"
+import Whatsapp from "../../icons/Whatsapp.astro"
+const numero = '3418785518';
+const mensaje = 'Hola, quiero más información sobre los servicios que ofrecen :)'
+const mensajeCodificado = encodeURIComponent(mensaje);
+const linkWhatsapp = `https://wa.me/52${numero}?text=${mensajeCodificado}`;
+---
+<footer class="bg-gray-300">
+  <div class="container mx-auto max-w-6xl px-4 font-semibold">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-20 md:gap-10 md:md-2 py-20 pb-15">
+      <img src="/logo.png" alt="Logo" class="w-30 transition-all duration-300 mx-auto md:mx-0 md:ml-2">
+      <div class="text-center flex justify-center gap-7 items-end">
+        <a href="https://www.instagram.com/tecnoscusmajac/" target="_blank">
+          <Instagram  width="30px" fill="#333" />
+        </a>
+        <a href="https://www.facebook.com/profile.php?id=61560509035655" target="_blank">
+          <Facebook  width="30px" fill="#333" />
+        </a>
+        <a href={linkWhatsapp} target="_blank">
+          <Whatsapp  width="30px" fill="#333" />
+        </a>
+        <a href="tel:+523418785518" target="_blank">
+          <Phone  width="25px" fill="#333" />
+        </a>
+      </div>
+      <div class="text-center md:text-right">
+        Heroes de Chapultepec 32<br>
+        49330 Usmajac, Jal. <br>
+        341 878 5518 <br>
+        <a href="mailto:tecnosc31@gmail.com">tecnosc31@gmail.com</a>
+      </div>
+    </div>
+    <div class="mx-auto p-2 text-center">
+      © 2025 TECNOSC | Diseñado por Gabino Larios Vargas
+    </div>
+  </div>
+</footer>

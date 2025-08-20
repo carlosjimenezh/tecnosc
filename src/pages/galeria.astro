@@ -1,0 +1,54 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/sections/Header.astro';
+import Footer from '../components/sections/Footer.astro';
+const imagenes = [
+  { src: '/galeria/i1.jpg', alt: 'Título de la imagen'},
+  { src: '/galeria/i2.jpg', alt: 'Título de la imagen'},
+  { src: '/galeria/i3.jpg', alt: 'Título de la imagen'},
+  { src: '/galeria/i4.jpg', alt: 'Título de la imagen'},
+  { src: '/galeria/i5.jpg', alt: 'Título de la imagen'},
+  { src: '/galeria/i6.jpg', alt: 'Título de la imagen'},
+  { src: '/galeria/i7.jpg', alt: 'Título de la imagen'},
+  { src: '/galeria/i9.jpg', alt: 'Título de la imagen'},
+  { src: '/galeria/i10.jpg', alt: 'Título de la imagen'},
+  { src: '/galeria/i11.jpg', alt: 'Título de la imagen'},
+  { src: '/galeria/i12.jpg', alt: 'Título de la imagen'},
+  { src: '/galeria/i13.jpg', alt: 'Título de la imagen'},
+  { src: '/galeria/i14.jpg', alt: 'Título de la imagen'},
+  { src: '/galeria/i15.jpg', alt: 'Título de la imagen'},
+  { src: '/galeria/i16.jpg', alt: 'Título de la imagen'},
+  { src: '/galeria/i17.jpg', alt: 'Título de la imagen'},
+  { src: '/galeria/i18.jpg', alt: 'Título de la imagen'},
+  { src: '/galeria/i19.jpg', alt: 'Título de la imagen'},
+  { src: '/galeria/i20.jpg', alt: 'Título de la imagen'},
+  { src: '/galeria/i21.jpg', alt: 'Título de la imagen'},
+  { src: '/galeria/i22.jpg', alt: 'Título de la imagen'},
+  { src: '/galeria/i23.jpg', alt: 'Título de la imagen'},
+  { src: '/galeria/i24.jpg', alt: 'Título de la imagen'},
+  { src: '/galeria/i25.jpg', alt: 'Título de la imagen'},
+]
+---
+
+<Layout>
+<Header /> 
+<div class="relative h-50 md:h-90"> 
+  <img src="/galeria/i6.jpg" class="absolute h-full w-full object-cover" alt="Imagen de fondo de contacto" loading="lazy">
+</div>
+<section id="imagenes">
+  <div class="container max-w-6xl mx-auto px-4 my-30 md:my-50 mt-10 md:mt-30 text-center">
+    <h1 class="text-center text-[#002147] font-bold text-3xl md:text-4xl mb-5">Nuestro Trabajo</h1>
+    <p class="max-w-xl m-auto text-gray-500 text-justify last-justify" style="text-align-last: center;">Nuestro trabajo habla por nosotros. Explora algunos de nuestros proyectos de instalación de cámaras, videoporteros e internet.</p>
+    <div class="grid grid-cols-2 md:grid-cols-4 mt-8 gap-4">
+        {imagenes.map(({src, alt}) => {
+        return (
+        <div class="h-50 md:h-60">
+          <img src={src} alt={alt} loading="lazy" class="rounded w-full h-full object-cover">
+        </div>
+        )
+        })}
+    </div>
+  </div>
+</section>
+<Footer /> 
+</Layout>

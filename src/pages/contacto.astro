@@ -1,0 +1,21 @@
+---
+import Layout from '../layouts/Layout.astro'
+import Header from '../components/sections/Header.astro'
+import Footer from '../components/sections/Footer.astro'
+import Contact from '../components/sections/Contact.astro'
+---
+
+<Layout>
+<Header />
+  <section>
+    <div class="container mx-auto max-w-6xl px-4 my-30 md:my-50 mt-10 md:mt-30">
+      <div class="grid grid-cols-1 md:grid-cols-2 md:gap-5 gap-30">
+        <Contact />
+        <div>
+          <img src="/galeria/i8.jpg" alt="" loading="lazy" class="w-full h-full object-cover rounded" style="object-position: 28% center">
+        </div>
+      </div>
+    </div>
+  </section>
+<Footer />
+</Layout>

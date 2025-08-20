@@ -1,0 +1,124 @@
+---
+// import Card from './Card.astro';
+import Button from '../../components/Button.astro';
+---
+
+<section id="contacto">
+  <h1 class="text-[#002147] font-bold text-3xl md:text-4xl mb-5 flex items-end justify-between">Contáctanos</h1>
+  <p class="font-xs text-gray-500 text-sm mb-7">
+    Estamos listos para asesorarte en la instalación de cámaras de <strong>seguridad</strong>, <strong>alarmas</strong>, <strong>videoporteros</strong> e <strong class="">internet</strong>.
+    <br>
+    Contáctanos y recibe atención personalizada para tu hogar o negocio.
+  </p>
+  <form id="contact-form" class="relative">
+    <label for="name" class="relative font-semibold">Nombre
+      <input name="name" type="text" value="" id="name" class="font-normal bg-white text-gray-700 font-medium block p-2 border border-gray-300 rounded w-full mb-7">
+      <p class="error text-xs md:text-md text-red-400 hidden absolute bottom-8 w-max break-words font-medium">Ingrese un nombre válido (solo letras y espacios)</p>
+    </label>
+    <label for="email" class="relative font-semibold">Email
+      <input name="email" type="email" value="" id="email" class="font-normal bg-white text-gray-700 font-medium block p-2 border border-gray-300 rounded w-full mb-7">
+      <p class="error text-xs md:text-md text-red-400 hidden absolute bottom-8 w-max font-medium break-words">Ingrese un email válido (ejemplo@gmail.com)</p>
+    </label>
+    <label for="message" class="font-semibold">Mensaje
+      <textarea name="message" id="message" rows="10" class="font-normal bg-white text-gray-700 font-medium block p-2 border border-gray-300 rounded w-full mb-7"></textarea>
+    </label>
+    <Button customClass="w-full">Enviar</Button>
+  </form>
+</section>
+
+
+
+
+
+<script>
+import Swal from 'sweetalert2';
+const nameInput = document.querySelector('#name')
+const emailInput = document.querySelector('#email')
+document.querySelector('#contact-form')?.addEventListener('submit', (e) => {
+  e.preventDefault()
+  // validar inputs
+  const validName = validateInput(nameInput, /^[a-zA-ZÀ-ÿ\s]{3,80}$/)
+  const validEmail = validateInput(emailInput, /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/)
+  const formValid = validName && validEmail
+  if (!formValid) {
+    nameInput?.addEventListener('keyup', () => {validateInput(nameInput, /^[a-zA-ZÀ-ÿ\s]{3,80}$/)})
+    emailInput?.addEventListener('keyup', () => {validateInput(emailInput, /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/)})
+    Swal.fire({
+      title: 'Error',
+      text: 'Por favor, complete los campos correctamente.',
+      icon: 'error',
+      confirmButtonText: 'Aceptar'
+    })
+    return
+  }
+  // enviar formulario  
+  Swal.fire({
+    title: 'Enviando...',
+    text: 'Por favor, espere un momento.',
+    allowOutsideClick: false,
+    allowEscapeKey: false,
+    didOpen: () => {
+      Swal.showLoading();
+    }
+  })
+  //fetch email service
+  const endpoint = 'https://formspree.io/f/mjkornjr'
+  
+  fetch (endpoint, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      name: nameInput.value,
+      email: emailInput.value,
+      message: document.querySelector('#message')?.value
+    })
+  })
+    .then( response => {
+      if (response.ok) {
+        return response.json()
+      } else {
+        console.error('Error al enviar el formulario', response.statusText)
+        Swal.fire({
+          title: 'Error',
+          text: 'Hubo un problema al enviar tu mensaje. Por favor, inténtalo de nuevo más tarde.',
+          icon: 'error',
+          confirmButtonText: 'Aceptar'
+        })
+      }
+    })
+    .then (data => {
+      if (data.ok) {
+        Swal.fire({
+          title: 'Éxito',
+          text: 'Tu mensaje ha sido enviado correctamente.',
+          icon: 'success',
+          confirmButtonText: 'Aceptar'
+        })
+        document.querySelector('#contact-form')?.reset()
+      } else {
+        Swal.fire({
+          title: 'Error',
+          text: 'Hubo un problema al enviar tu mensaje. Por favor, inténtalo de nuevo más tarde.',
+          icon: 'error',
+          confirmButtonText: 'Aceptar'
+        })
+      }
+    })
+})
+
+
+function validateInput (input, regex) {
+  const { value } = input
+  const error = input.parentNode.querySelector('.error')
+  if (regex.test(value)) {
+    input.classList.remove("invalid")
+    error?.classList.add("hidden")
+    return true
+  }
+  input.classList.add("invalid")
+  error?.classList.remove("hidden")
+  return false
+}
+</script>

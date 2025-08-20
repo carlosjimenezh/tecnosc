@@ -1,0 +1,137 @@
+---
+import Whatsapp from '../../components/Whatsapp.astro';
+const Prueba = Astro.url.pathname;
+---
+
+<header class="bg-[linear-gradient(90deg,#002147,#004aad)] text-white py-4 text-center sticky top-0 z-[1000] transition-all duration-300">
+  <div class="hidden md:flex items-center justify-center gap-2 pb-4">
+    <img src="/white-logo.png" alt="Logo" class="w-30 transition-all duration-300" style="filter: drop-shadow(0.5px 0px 1px black)" />
+  </div>
+  <nav class="bg-[#002147] py-1">
+    <ul class="flex justify-between list-none m-0 text-md items-center container max-w-6xl mx-auto px-2">
+      <li class="md:hidden">
+        <a href="/">
+          <img src="/white-logo.png" alt="Logo" class="w-25 p-2 rounded" style="filter: drop-shadow(0.5px 0px 1px black)"/>
+        </a>
+      </li>
+      <li class=`${Prueba === '/' ? 'active' : ''}`><a href="/" data-active="banner" class="font-semibold cursor-pointer hidden md:block text-white no-underline px-6 py-2 transition-colors duration-300 rounded-[10px] focus:outline-none focus:ring-2 focus:ring-white">Inicio</a></li>
+      <li class=`${Prueba === '/quienes-somos' ? 'active' : ''}`><a href="quienes-somos" data-active="quienes-somos" class="font-semibold hidden md:block text-white no-underline px-6 py-2 transition-colors duration-300 rounded-[10px] focus:outline-none focus:ring-2 focus:ring-white">Quiénes somos</a></li>
+      <li id="hover" class=`relative hidden md:block ${Prueba === '/servicios' ? 'active' : ''}`>
+        <a href="servicios" data-active="servicios" class="relative ml-0 md:ml-[-38px] font-semibold hidden md:block text-white no-underline px-6 py-2 transition-colors duration-300 rounded-[10px] focus:outline-none focus:ring-2 focus:ring-white">
+          Servicios
+          <svg class="w-2.5 h-2.5 ms-3 absolute right-1 bottom-[14px]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+          </svg>
+        </a>
+        <div class="hover">
+          <ul class="flex list-none flex-col items-start justify-start gap-2 font-semibold">
+            <li><a href="servicios#alarmas">Alarmas Iteligentes</a></li>
+            <li><a href="servicios#camaras">Camaras de seguridad</a></li>
+            <li><a href="servicios#videoporteros">Video Porteros</a></li>
+            <li><a href="servicios#internet">Internet</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class=`${Prueba === '/galeria' ? 'active' : ''}`><a href="galeria" data-active="galeria" class="font-semibold hidden md:block text-white no-underline px-6 py-2 transition-colors duration-300 rounded-[10px] focus:outline-none focus:ring-2 focus:ring-white">Galería</a></li>
+      <li class=`${Prueba === '/contacto' ? 'active' : ''}`><a href="contacto" data-active="contacto" class="font-semibold hidden md:block text-white no-underline px-6 py-2 transition-colors duration-300 rounded-[10px] focus:outline-none focus:ring-2 focus:ring-white">Contacto</a></li>
+      <li class="md:hidden"><span id="open-collapsing-menu" class="cursor-pointer text-white no-underline px-4 text-3xl transition-colors duration-300 rounded-[10px] focus:outline-none focus:ring-2 focus:ring-white">&#9776;</span></li>
+    </ul>
+  </nav>
+  <div id="collapsing-menu" class=" md:hidden h-full w-full bg-[linear-gradient(90deg,#002147,#004aad)] fixed z-9999 top-0 left-0 transition-all duration-300 ease-in-out overflow-hidden">
+    <div class="max-w-md mx-auto p-4 h-full flex flex-col items-center justify-start gap-15">
+      <span id="close" class="absolute top-13 right-8 font-bold cursor-pointer">&#10005;</span>
+      <img src="/white-logo.png" alt="" class="w-35 mt-7" style="filter: drop-shadow(0px 0px 4px #002147)">
+      <nav>
+        <ul class="flex flex-col gap-4 justify-between list-none m-0 text-md items-center container max-w-7xl mx-auto">
+          <li class=`${Prueba === '/' ? 'active' : ''}`><a href="/" data-active="inicio" class="cursor-pointer text-xl text-white no-underline transition-colors duration-300 rounded-[10px] hover:bg-[#ffb400] hover:text-[#002147] focus:outline-none focus:ring-2 focus:ring-white">Inicio</a></li>
+          <li class=`${Prueba === '/quienes-somos' ? 'active' : ''}`><a href="quienes-somos" data-active="quienes-somos" class="font-semibold text-xl text-white no-underline transition-colors duration-300 rounded-[10px] hover:bg-[#ffb400] hover:text-[#002147] focus:outline-none focus:ring-2 focus:ring-white">Quiénes somos</a></li>
+          <li class=`${Prueba === '/servicios' ? 'active' : ''}`><a href="servicios" data-active="servicios" class="font-semibold text-xl text-white no-underline transition-colors duration-300 rounded-[10px] hover:bg-[#ffb400] hover:text-[#002147] focus:outline-none focus:ring-2 focus:ring-white">Servicios</a></li>
+          <li class=`${Prueba === '/galeria' ? 'active' : ''}`><a href="galeria" data-active="galeria" class="font-semibold text-xl text-white no-underline transition-colors duration-300 rounded-[10px] hover:bg-[#ffb400] hover:text-[#002147] focus:outline-none focus:ring-2 focus:ring-white">Galería</a></li>
+          <li class=`${Prueba === '/contacto' ? 'active' : ''}`><a href="contacto" data-active="contacto" class="font-semibold text-xl text-white no-underline transition-colors duration-300 rounded-[10px] hover:bg-[#ffb400] hover:text-[#002147] focus:outline-none focus:ring-2 focus:ring-white">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+
+
+
+<Whatsapp />
+
+<style>
+@media (min-width: 768px) {
+  header.scrolled img {
+    width: 75px;
+  }
+  header .hover {
+    opacity: 0;
+    position: absolute;
+    width: max-content;
+    left: -32px;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out
+  }
+  header #hover:hover .hover {
+    opacity: 1;
+    max-height: 200px;
+    background: #002147;
+    padding: 10px 20px;
+  }
+ }
+#collapsing-menu {
+  opacity: 0;
+  max-width: 0;
+}
+#collapsing-menu.open {
+  opacity: 1;
+  max-width: 100%;
+}
+header li.active a {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+header #hover li a {
+  text-decoration: none!important
+}
+
+</style>
+
+<script>
+document.addEventListener('scroll', () => {
+  const header = document.querySelector('header');
+  if (window.scrollY > 80) {
+    header?.classList.add('scrolled');
+  } else {
+    header?.classList.remove('scrolled');
+  }
+})
+
+document.querySelector('#open-collapsing-menu')?.addEventListener('click', () => {
+  if (!document.querySelector('#collapsing-menu')?.classList.contains('open')) {
+    document.querySelector('#collapsing-menu')?.classList.add('open')
+  } else {
+    document.querySelector('#collapsing-menu')?.classList.remove('open')
+  }
+})
+
+document.querySelector('#close')?.addEventListener('click', () => {
+  if (!document.querySelector('#collapsing-menu')?.classList.contains('open')) {
+    document.querySelector('#collapsing-menu')?.classList.add('open')
+  } else {
+    document.querySelector('#collapsing-menu')?.classList.remove('open')
+  }
+})
+
+
+
+document.querySelector('#collapsing-menu nav')?.addEventListener('click', e => {
+  const target = e.target
+  if (target.dataset.active && document.querySelector('#collapsing-menu')?.classList.contains('open')) {
+    document.querySelector('#collapsing-menu')?.classList.remove('open')
+  }
+})
+
+
+
+</script>
