@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/sections/Header.astro';
 import Footer from '../components/sections/Footer.astro';
+import Contactanos from '../components/sections/Contactanos.astro';
 const imagenes = [
   { src: '/galeria/i1.jpg', alt: 'Título de la imagen'},
   { src: '/galeria/i2.jpg', alt: 'Título de la imagen'},
@@ -36,7 +37,7 @@ const imagenes = [
   <img src="/galeria/i6.jpg" class="absolute h-full w-full object-cover" alt="Imagen de fondo de contacto" loading="lazy">
 </div>
 <section id="imagenes">
-  <div class="container max-w-6xl mx-auto px-4 my-30 md:my-50 mt-10 md:mt-30 text-center">
+  <div class="container max-w-6xl mx-auto px-4 my-30 md:mb-20 mt-10 md:mt-30 text-center">
     <h1 class="text-center text-[#002147] font-bold text-3xl md:text-4xl mb-5">Nuestro Trabajo</h1>
     <p class="max-w-xl m-auto text-gray-500 text-justify last-justify" style="text-align-last: center;">Nuestro trabajo habla por nosotros. Explora algunos de nuestros proyectos de instalación de cámaras, videoporteros e internet.</p>
     <div class="grid grid-cols-2 md:grid-cols-4 mt-8 gap-4">
@@ -50,5 +51,6 @@ const imagenes = [
     </div>
   </div>
 </section>
+<Contactanos />
 <Footer /> 
 </Layout>
