@@ -1,0 +1,62 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/sections/Header.astro';
+import Footer from '../components/sections/Footer.astro';
+import Contactanos from '../components/sections/Contactanos.astro';
+import Card from '../components/Card.astro';
+const services = [
+  {
+    title: 'Internet Domestico',
+    description: 'Planes de internet para el hogar con la mejor velocidad y estabilidad.',
+    image: '/images/internet-domestico.jpg',
+    list: [
+      'Velocidades desde 10 Mbps hasta 1000 Mbps',
+      'Instalación rápida y sencilla',
+      'Soporte técnico 24/7',
+    ],
+  },
+  {
+    title: 'Internet Domestico',
+    description: 'Planes de internet para el hogar con la mejor velocidad y estabilidad.',
+    image: '/images/internet-domestico.jpg',
+    list: [
+      'Velocidades desde 10 Mbps hasta 1000 Mbps',
+      'Instalación rápida y sencilla',
+      'Soporte técnico 24/7',
+    ],
+  },
+  {
+    title: 'Internet Domestico',
+    description: 'Planes de internet para el hogar con la mejor velocidad y estabilidad.',
+    image: '/images/internet-domestico.jpg',
+    list: [
+      'Velocidades desde 10 Mbps hasta 1000 Mbps',
+      'Instalación rápida y sencilla',
+      'Soporte técnico 24/7',
+    ],
+  },
+]
+---
+
+<Layout>
+<Header />
+<div class="relative h-50 md:h-90"> 
+  <img src="/fondo-parcial.jpg" class="absolute h-full w-full object-cover" alt="Imagen de fondo de contacto" loading="lazy">
+  <div class="absolute inset-0 bg-black opacity-50 z-2"></div> 
+  <div class="absolute inset-0 flex flex-col items-center justify-center z-3">
+    <h1 class="text-center text-white" style="font-size: clamp(4em, 12vw, 9em);">Internet</h1>
+    <p class="font-thin text-center text-white mt-4">Domestico, Comercial y Empresarial</p>
+  </div>
+</div>
+<section class="container max-w-6xl mx-auto px-4 my-30 md:mb-20 mt-10 md:mt-30 text-center">
+  <div class="grid grid-cols-3 gap-2"> 
+      {services.map(service => (
+      <Card>
+        <h2>{service.title}</h2>
+      </Card>
+      ))}
+  </div>
+</section>
+<Contactanos />
+<Footer />
+</Layout>
