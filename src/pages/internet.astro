@@ -4,36 +4,58 @@ import Header from '../components/sections/Header.astro';
 import Footer from '../components/sections/Footer.astro';
 import Contactanos from '../components/sections/Contactanos.astro';
 import Card from '../components/Card.astro';
+const numero = '3418785518';
 const services = [
   {
     title: 'Internet Domestico',
-    description: 'Planes de internet para el hogar con la mejor velocidad y estabilidad.',
     image: '/images/internet-domestico.jpg',
     list: [
-      'Velocidades desde 10 Mbps hasta 1000 Mbps',
-      'Instalación rápida y sencilla',
-      'Soporte técnico 24/7',
+      'Velocidad de descarga y subida 10 Mbps',
+      'Ideal para redes sociales, navegación y streaming básico',
+      'Soporta hasta 4 dispositivos conectados simultáneamente',
+      'Incluye router Wi-Fi',
+      'Conexión rápida y estable por radioenlace',
+      'Soporte técnico dedicado',
+      'Sin límites de consumo',
+      'Sin contratos forzosos (aplica en ciertas zonas)',
     ],
+    precio: '$250.00',
+    linkWA: `https://wa.me/52${numero}?text=${encodeURIComponent('Hola, quiero más información sobre el plan de Internet Doméstico')}`,
+    masPopular: false,
   },
   {
-    title: 'Internet Domestico',
-    description: 'Planes de internet para el hogar con la mejor velocidad y estabilidad.',
+    title: 'Internet Comercial',
     image: '/images/internet-domestico.jpg',
     list: [
-      'Velocidades desde 10 Mbps hasta 1000 Mbps',
-      'Instalación rápida y sencilla',
-      'Soporte técnico 24/7',
+      'Velocidad de descarga y subida hasta 20 Mbsp',
+      'Perfecto para straming en HD, videollamadas y trabajo remoto',
+      'Soporta hasta 6 dispositivos conectados simultáneamente',
+      'Incluye router Wi-Fi',
+      'Conexión rápida y estable por radioenlace',
+      'Soporte técnico dedicado',
+      'Sin límites de consumo',
+      'Sin contratos forzosos (aplica en ciertas zonas)',
     ],
+    precio: '$250.00',
+    linkWA: `https://wa.me/52${numero}?text=${encodeURIComponent('Hola, quiero más información sobre el plan de Internet Comercial')}`,
+    masPopular: true,
   },
   {
-    title: 'Internet Domestico',
-    description: 'Planes de internet para el hogar con la mejor velocidad y estabilidad.',
+    title: 'Internet Empresarial',
     image: '/images/internet-domestico.jpg',
     list: [
-      'Velocidades desde 10 Mbps hasta 1000 Mbps',
-      'Instalación rápida y sencilla',
-      'Soporte técnico 24/7',
+      'Velocidad de descarga y subida hasta 30 Mbsp',
+      'Ideal para gaming, videoconferencias y streaming 4k',
+      'Soporta hasta 8 dispositivos conectados simultáneamente',
+      'Incluye router Wi-Fi',
+      'Conexión rápida y estable por radioenlace',
+      'Soporte técnico dedicado',
+      'Sin límites de consumo',
+      'Sin contratos forzosos (aplica en ciertas zonas)',
     ],
+    precio: '$250.00',
+    linkWA: `https://wa.me/52${numero}?text=${encodeURIComponent('Hola, quiero más información sobre el plan de Internet Empresarial')}`,
+    masPopular: false,
   },
 ]
 ---
@@ -49,10 +71,21 @@ const services = [
   </div>
 </div>
 <section class="container max-w-6xl mx-auto px-4 my-30 md:mb-20 mt-10 md:mt-30 text-center">
-  <div class="grid grid-cols-3 gap-2"> 
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-30 md:gap-5"> 
       {services.map(service => (
       <Card>
-        <h2>{service.title}</h2>
+        {service.masPopular && (
+          <div class="absolute font-semibold text-white bg-green-400 px-4 w-full top-[-15px] left-0 rounded shadow">MÁS POPULAR</div>
+        )}
+        <h2 class="font-semibold text-lg mb-5">{service.title}</h2>
+        <h3 class="text-4xl text-gray-600">{service.precio}</h3>
+        <p class="text-gray-400 mb-5 text-sm">{service.description}</p>
+        <ul class="list-disc text-left pl-5 m-0 text-sm mx-auto max-w-[250px] flex-1">
+          {service.list.map(item => (
+            <li class="mb-4">{item}</li>
+          ))}
+        </ul>
+        <a href={service.linkWA} target="_blank" class="shadow-md block w-full bg-[#ffb400] text-white py-1 px-4 text-lg mt-5 mb-0 w-30 m-auto block font-semibold transition duration-300 rounded-md">Más información</a>
       </Card>
       ))}
   </div>
